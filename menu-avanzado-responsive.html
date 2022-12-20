@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Menu flex | </title>
+    <!-- <link rel="stylesheet" href="220617_1_estilos.css">   -->
+    <!--
+    0 - Realiza un menu con enlaces a zara.com que este en un nav, situado abajo con reparto de espacios y margen en los extremos, que los botones esten dimensionados adecuadamente con un comportamiento hover que cambie su estilo en font-size, color y background-tolor
+    1 -  El reset tiene que controlar las inperfecciones de los ul (discos al lado y padding left) y a (color azul y subrayado)
+    2 - al finalizar el ejercicio se coloca en un archivo css externo (220617_1_estilos.css)
+    1- Coloca el nav en un contenedor centrado que esta al 80%. El nav tiene un margin-top de 2.3rem
+    2- El ul va a tener un heigh de 300 px, el nav un background yellowgreen
+    3- haremos en el ul 5 botones: Inicio, Equipo, Producto, Servicios, Contacto (recordar que las a las transformamos en display block) que van a tener como caracteristicaa
+        - width: 6.8rem;
+        - font-size: 2rem
+        - font-weight: 300
+        - backgroun-color: a elegir
+        - color:  a elEgir
+
+    4 - Haremos un efecto de cursor hover con una pseudo clase que invierta el contraste en colo y fondo. Con un transition de medio segundo
+
+
+
+
+
+
+
+
+-->
+
+    <style>
+        /*reset */
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: aqua;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+
+        /*Codigo */
+
+
+
+
+        .contenedor {
+            width: 80%;
+        }
+
+        .centrado {
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: yellowgreen;
+            margin-top: 2.3rem;
+        }
+
+        nav>ul {
+            height: auto;
+            padding-bottom: 0.5rem;
+            padding-top:  0.5rem;
+
+
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+
+
+
+
+        }
+
+        nav a {
+            width: 6.8rem;
+            color: blanchedalmond;
+            background-color: blueviolet;
+            font-size: 2rem;
+            font-weight: 300;
+
+            display: block;
+            padding: 1.2rem;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: center;
+            transition: 500ms;
+            margin: 0.3rem;
+        }
+
+        nav>ul>li>ul>li a{
+            background-color: rgb(164, 130, 196);
+        }
+        nav a:hover {
+            color: rgb(30, 36, 117);
+            background-color: rgb(146, 169, 210);
+
+        }
+
+
+        nav>ul>li {
+            position: relative;
+
+        }
+
+        nav>ul>li>ul>li {
+            margin-bottom: 0.8rem
+        }
+
+        nav>ul>li>ul {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            height: 400px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+
+        nav>ul>li:hover>ul {
+            opacity: 1;
+        }
+        /*Esta es la regla para la medida media, mas pequeño que 650*/
+@media only screen and (max-width: 950px) {
+    body {
+        background-color: red;
+    }
+    nav>ul {
+         
+            display: flex;
+            flex-direction: column;
+            
+            justify-content: center;
+            align-items: center; 
+
+        }
+
+
+     nav>ul>li {
+            position: static;
+
+        }
+
+       
+        nav>ul>li>ul {
+            position: static;
+            opacity: 1;
+            height: auto;
+        }
+        
+        nav a {
+            width: 20rem;
+        }
+}
+    </style>
+</head>
+
+
+<body>
+    <!-- .contenedor>nav>ul>li*5>a[href="https://www.zara.com/"]{enlace $}    -->
+
+    <div class="contenedor centrado">
+        <nav>
+            <ul>
+                <li><a href="https://www.zara.com/">Inicio</a></li>
+                <li><a href="https://www.zara.com/">Equipo</a>
+                    <!--   ul>li*3>a[href="#"]{Enlace $}   -->
+                    <ul>
+                        <li><a href="#">Enlace 1</a></li>
+                        <li><a href="#">Enlace 2</a></li>
+                        <li><a href="#">Enlace 3</a></li>
+                    </ul>
+
+
+                </li>
+                <li><a href="https://www.zara.com/">Producto</a></li>
+                <li><a href="https://www.zara.com/">Servicios</a></li>
+                <li><a href="https://www.zara.com/">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
